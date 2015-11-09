@@ -3,6 +3,7 @@ import { TYPE_START, TYPE_PAUSE, TYPE_FINISH } from '../constants/ActionTypes'
 const initialState = {
     status: TYPE_FINISH,
     score: 0,
+    speed: 0,
     typingNum: 0
 }
 
@@ -24,6 +25,7 @@ export default function keyboard(state = initialState, action) {
             return Object.assign({},state, {
                     status: TYPE_FINISH,
                     score: action.score,
+                    speed: action.speed,
                     typingNum: action.num
                 })
             break;

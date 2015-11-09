@@ -29,6 +29,7 @@ class Keyboard extends Component {
     constructor(props) {
         super(props)
         this.score = 0;
+        this.speed = 0;
         this.num = this.props.typingNum;
         this.redo = this.props.wrong;
         this.wrongNum = 0;
@@ -70,7 +71,7 @@ class Keyboard extends Component {
         this.typingLine = formatText(Words);
         this.num = 0;
         this.score = 100 - this.wrongNum;
-        this.props.actions.finishTyping(this.score, this.num)
+        this.props.actions.finishTyping(this.score, this.speed, this.num)
     }
 
     render() {
