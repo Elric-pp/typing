@@ -77,6 +77,7 @@ class Keyboard extends Component {
     render() {
         return (
             <section tabIndex="0"
+                            className="keyboard-section"
                             onFocus={this.handleFocus.bind(this)}
                             onBlur={this.handleBlur.bind(this)}
                             onKeyPress={this.handleKeyPress.bind(this)}>

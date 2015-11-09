@@ -4,9 +4,9 @@ import React, { PropTypes, Component } from 'react'
 class Panel extends Component {
     render() {
         return (
-            <div>
-                 <div>score: { this.props.score }</div>
-                 <div>speed: { this.props.speed }</div>
+            <div className="score-panel">
+                 <div className="item">score: { this.props.score }</div>
+                 <div className="item">speed: { this.props.speed }</div>
             </div>
         )
     }

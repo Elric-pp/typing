@@ -4,7 +4,7 @@ import React, { PropTypes, Component } from 'react'
 class Board extends Component {
     render() {
         return (
-            <div>
+            <div className="key-area">
 
             </div>
         )

@@ -10,7 +10,7 @@ class App extends Component {
     render() {
         const { status, score, actions, speed, typingNum } = this.props
         return (
-            <div  >
+            <div  className="App">
                 <Panel score={score} speed={speed} />
                 <Keyboard status={status} actions={actions} typingNum={typingNum} />
             </div>

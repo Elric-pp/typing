@@ -11,7 +11,7 @@ class Word extends Component {
         })
 
         return (
-            <div>{letters}</div>
+            <div className="text-line">{letters}</div>
         )
     }
 }
