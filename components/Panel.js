@@ -4,7 +4,10 @@ import React, { PropTypes, Component } from 'react'
 class Panel extends Component {
     render() {
         return (
-            <div>我是{ this.props.score }</div>
+            <div>
+                 <div>score: { this.props.score }</div>
+                 <div>speed: { this.props.speed }</div>
+            </div>
         )
     }
 }
