@@ -28,7 +28,6 @@ function formatText (words) {
 class Keyboard extends Component {
     constructor(props) {
         super(props)
-        this.score = 0;
         this.speed = 0;
         this.num = this.props.typingNum;
         this.redo = this.props.wrong;
@@ -45,7 +44,7 @@ class Keyboard extends Component {
     }
 
     handleBlur() {
-        this.props.actions.pause(this.score)
+        this.props.actions.pause()
     }
 
     handleKeyPress(e) {
@@ -69,9 +68,10 @@ class Keyboard extends Component {
 
     handleFinish() {
         this.typingLine = formatText(Words);
+        let score =  100 - this.wrongNum;
+        this.props.actions.finishTyping(score, this.speed, this.num)
         this.num = 0;
-        this.score = 100 - this.wrongNum;
-        this.props.actions.finishTyping(this.score, this.speed, this.num)
+        this.wrongNum = 0;
     }
 
     render() {
