@@ -23,7 +23,7 @@ $light_gray: #4f5a65;
     padding: 10px;
     overflow: hidden;
     > .score-panel {
-        height: 10%;
+        padding: 1% 10px;
         margin-bottom: 3%;
     }
     > .keyboard-section {
@@ -34,7 +34,6 @@ $light_gray: #4f5a65;
 .score-panel {
     @extend .row-flex;
     background: $light_gray;
-    padding: 0 10px;
     border-radius: 5px;
     > .item {
         font-size: 3em;
@@ -50,10 +49,13 @@ $light_gray: #4f5a65;
     }
     > .text-line {
         width: 99%;
-        height: 15%;
         font-size: 2em;
-        line-height: 2em;
-        padding-left: 1%;
+        height: 10%;
+        padding: 2% 0 2% 1%;
+        @extend .row-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: space-between;
     }
     > .key-area {
         width: 100%;
@@ -63,15 +65,30 @@ $light_gray: #4f5a65;
 }
 
 .text-line {
-    letter-spacing: 5px;
+    letter-spacing: 10px;
     background: $light_gray;
     border-radius: 5px;
+    > .letter {
+        display: inline-flex;
+        flex-flow: column;
+        line-height: 20px;
+        > .blink {
+            animation: blink 0.5s linear 0s infinite;
+            line-height: 0;
+        }
+    }
     > .right {
         color: #92ff92;
     }
     > .wrong {
         color: #f00;
     }
+}
+
+@keyframes blink
+{
+    0% { opacity: 0 }
+    100% { opacity:  1 }
 }
 
 .key-area {

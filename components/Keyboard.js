@@ -4,12 +4,16 @@ import Board from '../components/Board'
 import Words from '../words.json';
 
 function formatText (words) {
-    const count = 5;
+    const count = 7;
     let textString = "";
     const len = words.length;
     for (let i = 0; i < count; i++) {
         let j = Math.floor(Math.random()*len);
-        textString += words[j].word + " ";
+        if (i == count-1) {
+            textString +=  words[j].word;
+        } else {
+            textString +=  words[j].word + "_";
+        }
     }
     let textArr = textString.split("")
     let result = []
@@ -50,7 +54,7 @@ class Keyboard extends Component {
     handleKeyPress(e) {
         let letter = this.typingLine[this.num]
 
-        if (e.key === letter.key) {
+        if (e.key === letter.key || (e.key===" " && letter.key === "_")) {
             letter.tf = letter.typed ? "wrong" : "right";
             this.num++;
             this.props.actions.startTyping(this.num)
@@ -81,7 +85,7 @@ class Keyboard extends Component {
                             onFocus={this.handleFocus.bind(this)}
                             onBlur={this.handleBlur.bind(this)}
                             onKeyPress={this.handleKeyPress.bind(this)}>
-                    <Word   text={this.typingLine} />
+                    <Word   text={this.typingLine}  curNum={this.num} />
                     <Board />
             </section>
         )
