@@ -73,7 +73,7 @@ $light_gray: #4f5a65;
         flex-flow: column;
         line-height: 20px;
         > .blink {
-            animation: blink 0.5s linear 0s infinite;
+            animation: blink .5s linear 0s infinite;
             line-height: 0;
         }
     }
@@ -88,6 +88,9 @@ $light_gray: #4f5a65;
 @keyframes blink
 {
     0% { opacity: 0 }
+    25% { opacity: 0 }
+    50% { opacity: 1 }
+    75% { opacity: 1 }
     100% { opacity:  1 }
 }
 
