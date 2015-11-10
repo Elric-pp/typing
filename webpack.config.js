@@ -1,5 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
+var postcss_nested = require('postcss-nested')
+var postcss_advanced_variables = require('postcss-advanced-variables')
+var postcss_extend = require('postcss-extend')
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
@@ -30,12 +33,11 @@ module.exports = {
         },
         {
           test: /\.css$/,
-          loaders: [ "style", "css" ],
-        },
-        {
-          test: /\.scss$/,
-          loaders: [ "style", "css", "sass" ],
+          loaders: [ "style", "css" , "postcss"],
         }]
+    },
+    postcss: function () {
+        return [postcss_nested, postcss_advanced_variables, postcss_extend]
     }
 }
 
