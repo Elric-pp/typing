@@ -50,7 +50,7 @@ $light_gray: #4f5a65;
     > .text-line {
         width: 99%;
         font-size: 2em;
-        height: 10%;
+        height: 3em;
         padding: 2% 0 2% 1%;
         @extend .row-flex;
         flex-wrap: wrap;
@@ -65,17 +65,17 @@ $light_gray: #4f5a65;
 }
 
 .text-line {
-    letter-spacing: 10px;
     background: $light_gray;
     border-radius: 5px;
     > .letter {
-        display: inline-flex;
-        flex-flow: column;
-        line-height: 20px;
-        > .blink {
-            animation: blink .5s linear 0s infinite;
-            line-height: 0;
-        }
+        line-height: 1.5em;
+        display: inline-block;
+        width: 0.9em;
+        text-align: center;
+        margin-right: 0.1em;
+    }
+    > .blink {
+        animation: blink .5s linear 0s infinite;
     }
     > .right {
         color: #92ff92;
@@ -87,11 +87,11 @@ $light_gray: #4f5a65;
 
 @keyframes blink
 {
-    0% { opacity: 0 }
-    25% { opacity: 0 }
-    50% { opacity: 1 }
-    75% { opacity: 1 }
-    100% { opacity:  1 }
+    0% { box-shadow: 0 0 #fff; }
+    25% { box-shadow: 0 0 #fff; }
+    50% { box-shadow: 0 2px #fff; }
+    75% { box-shadow: 0 2px #fff; }
+    100% {box-shadow: 0 2px #fff; }
 }
 
 .key-area {
